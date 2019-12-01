@@ -13,7 +13,7 @@ const generateEl = document.getElementById("generate")
 const clipboardEl = document.getElementById("clipboard")
 
 
-// Event Listener for Generation Click
+// Event Listener for Generation Click pulls checked values and then calls the password Gen function if inputs meet requirements
 generateEl.addEventListener("click", function () {
 
     //initialize viable characters
@@ -31,7 +31,7 @@ generateEl.addEventListener("click", function () {
     let poNum = '0123456789';
     let poSym = '~!@#$%°^&*()-_+={}[]|/:;"<>.?';
 
-    // Sets viable characters based upon checkboxes
+    // Sets viable characters based upon checkboxes true/false value
     if (lowercase) {
         passwordOptions += poLower
     };
@@ -64,7 +64,7 @@ generateEl.addEventListener("click", function () {
     passwordEl.value = passGen(length, passwordOptions);
 })
 
-
+//Password Generation Function
 passGen = function (length, passwordOptions) {
     //Iniitalize final password as blank string
     let finalPass = '';
@@ -75,6 +75,11 @@ passGen = function (length, passwordOptions) {
     };
     return finalPass;
 }
+
+
+
+
+
 // Legacy code from atCharCode attempt. Saving it for later in case I wanted to use it again.
 
 
