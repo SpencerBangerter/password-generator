@@ -12,26 +12,30 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/a03924f342.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <div class="container border border-primary rounded">
+    <div class="container border border-primary rounded mx-auto">
       <header>
         <h1>Password Generator</h1>
       </header>
       <h2>Generate a Password</h2>
-      <div>
+      <div class="p-4">
         <textarea
+          class=""
           readonly
           id="password"
           placeholder="Your Secure Password"
           aria-label="Generated Password"
         ></textarea>
         <button id="clipboard" onclick="copyToClip()">
-          <i class="fas fa-clipboard"> Copy To Clipboard</i>
+          <p class="fas fa-clipboard fa-4x"></p>
+          <!-- <i class="fas fa-clipboard"> Copy To Clipboard</i> -->
+
         </button>
       </div>
 

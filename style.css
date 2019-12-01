@@ -1,0 +1,38 @@
+body{
+    font-family: 'Alata', sans-serif;
+    padding: 30px;
+
+}
+
+#password{
+    width: 90%;
+    height: 100px;
+    float: left;
+    border: 2px blue dashed;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+
+}
+#clipboard{
+    width: 9%;
+    height: 100px;
+
+}
+#generate{
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+.fa-clipboard{
+    padding-top: 10px;
+}
+#clipboard{
+    border-radius: 25px;
+
+}
+#numCheck,#lcLetterCheck,#ucLetterCheck,#symbolsCheck{
+    height: 20px;
+    width: 20px;
+
+}
