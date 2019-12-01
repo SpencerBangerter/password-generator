@@ -20,10 +20,11 @@
   </head>
   <body>
     <div class="container border border-primary rounded mx-auto">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <h2>Generate a Password</h2>
+      <nav class="navbar">
+        <h2 class="navbar-text">Password Generator</h2>
+        <h2 class="navbar-text">By Spencer Bangerter</h2>
+      </nav>      
+      <div class="linebreak"></div>
       <div class="p-4">
         <textarea
           class=""
@@ -33,7 +34,7 @@
           aria-label="Generated Password"
         ></textarea>
         <button id="clipboard" onclick="copyToClip()">
-          <p class="fas fa-clipboard fa-4x"></p>
+          <p class="fas fa-clipboard fa-3x"></p>
           <!-- <i class="fas fa-clipboard"> Copy To Clipboard</i> -->
 
         </button>
@@ -41,26 +42,26 @@
 
       <!-- Password Selectors -->
       <div class="passwordLength">
-        <label>Password Length: </label>
+        <label>Password Length:</label>
         <input type="number" id="passLength" min="8" max="128" value="10" />
       </div>
 
       <!-- Checkboxes for Inclusion -->
       <div class="checkboxes">
-        <label>Include Lowercase Letters: </label>
         <input type="checkbox" id="lcLetterCheck" checked />
+        <label>Include Lowercase Letters</label>
       </div>
       <div class="checkboxes">
-        <label>Include Uppercase Letters: </label>
         <input type="checkbox" id="ucLetterCheck" checked />
+        <label>Include Uppercase Letters</label>
       </div>
       <div class="checkboxes">
-        <label>Include Numbers: </label>
         <input type="checkbox" id="numCheck" checked />
+        <label>Include Numbers</label>
       </div>
       <div class="checkboxes">
-        <label>Include Symbols: </label>
         <input type="checkbox" id="symbolsCheck" checked />
+        <label>Include Symbols</label>
       </div>
       <div>
         <button id="generate">Generate Password</button>
