@@ -61,7 +61,7 @@ generateEl.addEventListener("click", function () {
 
     // call the password generator function with the length and passwordOptions as arguments
 
-    passwordEl.vaue = passGen(length, passwordOptions);
+    passwordEl.value = passGen(length, passwordOptions);
 })
 
 
