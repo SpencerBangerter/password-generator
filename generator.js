@@ -17,21 +17,22 @@ const clipboardEl = document.getElementById("clipboard")
 generateEl.addEventListener("click", function () {
 
     //initialize viable characters
-    var passwordOptions = '';
+    var passwordOptions = ''; // Argument 2 of PW gen
 
     //pull values from elements above
-    let length = parseInt(lengthEl.value);
+    let length = parseInt(lengthEl.value); // Argument 1 of PW gen
     let lowercase = lowercaseEl.checked;
     let uppercase = uppercaseEl.checked;
     let numbers = numbersEl.checked;
     let symbols = symbolsEl.checked;
+
     // strings for value options
     let poLower = 'abcdefghijklmnopqrstuvwxyz';
     let poUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let poNum = '0123456789';
     let poSym = '~!@#$%°^&*()-_+={}[]|/:;"<>.?';
 
-    // Sets viable characters based upon checkboxes true/false value
+    // Sets viable characters based upon checkboxes true/false value by appending strings together
     if (lowercase) {
         passwordOptions += poLower
     };
@@ -45,27 +46,45 @@ generateEl.addEventListener("click", function () {
         passwordOptions += poSym
     };
 
-
     // length alert for min/max or no number set
     // circumvents ability to manually enter numbers over the min/max
-
     if (length < 8 || length > 128 || !length) {
         alert("Password Length Must be between 8 and 128 Characters")
     };
 
     // Alert for at least one option must be picked
-
     if (!lowercase && !uppercase && !numbers && !symbols) {
         alert("You must select at least one option for password characters.")
     };
 
     // call the password generator function with the length and passwordOptions as arguments
-
     passwordEl.value = passGen(length, passwordOptions);
 })
 
+
+// Function for Copy to Clipboard button, called via "onclick" in HTML. Used help from w3schools.com
+
+function copyToClip() {
+    // Get the text field
+    var copiedPass = document.getElementById("password");
+  
+
+    //Select the text field
+    copiedPass.select();
+    copiedPass.setSelectionRange(0, 99999); /*For mobile devices*/
+  
+    //Copy the text inside the text field
+    document.execCommand("copy");
+  
+    //Alert copied/failed message
+    if (copiedPass.value === '') {
+        alert("You must generate a password first!")
+    } else alert("Copied your password: " + copiedPass.value)
+
+}
 //Password Generation Function
 passGen = function (length, passwordOptions) {
+
     //Iniitalize final password as blank string
     let finalPass = '';
 
@@ -136,5 +155,4 @@ passGen = function (length, passwordOptions) {
 //     ]
 //     let symbol = symbolArr[Math.floor(Math.random()  * symbolArr.length)]
 //     console.log(symbol)
-// }
-
+// 
