@@ -5,23 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/a03924f342.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header>
-      <h1>Password Generator</h1>
-    </header>
-    <h2>Generate a Password</h2>
-    <textarea
-      readonly
-      id="password"
-      placeholder="Your Secure Password"
-      aria-label="Generated Password"
-    ></textarea>
-    <button id="generate">Generate Password</button>
-    <button id="copy">
-      Copy to Clipboard
-    </button>
+    <div class="container border border-primary rounded">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <h2>Generate a Password</h2>
+      <div>
+        <textarea
+          readonly
+          id="password"
+          placeholder="Your Secure Password"
+          aria-label="Generated Password"
+        ></textarea>
+        <button id="copy">
+          <i class="fas fa-clipboard"> Copy To Clipboard</i>
+        </button>
+      </div>
+
+      <!-- Password Selectors -->
+      <div class="passwordLength">
+        <label>Password Length: </label>
+        <input type="number" id="passLength" min="8" max="128" value="10" />
+      </div>
+
+      <!-- Checkboxes for Inclusion -->
+      <div class="checkboxes">
+        <label>Include Lowercase Letters: </label>
+        <input type="checkbox" id="lcLetterCheck" checked />
+      </div>
+      <div class="checkboxes">
+        <label>Include Uppercase Letters: </label>
+        <input type="checkbox" id="ucLetterCheck" checked />
+      </div>
+      <div class="checkboxes">
+        <label>Include Numbers: </label>
+        <input type="checkbox" id="numCheck" checked />
+      </div>
+      <div class="checkboxes">
+        <label>Include Symbols: </label>
+        <input type="checkbox" id="symbolsCheck" checked />
+      </div>
+      <div>
+        <button id="generate">Generate Password</button>
+      </div>
+    </div>
 
     <script src="generator.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
-
-
+// Generator Functions for random characters
+// Lowercase, Uppercase, and Number gen uses unicode character charts.  
 let lowercaseGen = function () {
     let letter = String.fromCharCode(Math.floor(Math.random()  * 26) + 97)
     console.log(letter)
