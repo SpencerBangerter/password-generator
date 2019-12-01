@@ -12,11 +12,10 @@ const symbolsEl = document.getElementById("symbolsCheck")
 const generateEl = document.getElementById("generate")
 const clipboardEl = document.getElementById("clipboard")
 
-console.log(clipboardEl)
 
 // Event Listener for Generation Click
-
 generateEl.addEventListener("click", function () {
+
     //initialize viable characters
     var passwordOptions = '';
 
@@ -35,74 +34,102 @@ generateEl.addEventListener("click", function () {
     // Sets viable characters based upon checkboxes
     if (lowercase) {
         passwordOptions += poLower
-    }
+    };
     if (uppercase) {
         passwordOptions += poUpper
-    }
+    };
     if (numbers) {
         passwordOptions += poNum
-    }
+    };
     if (symbols) {
         passwordOptions += poSym
-    }
-
-    console.log(passwordOptions)
+    };
 
 
+    // length alert for min/max or no number set
+    // circumvents ability to manually enter numbers over the min/max
+
+    if (length < 8 || length > 128 || !length) {
+        alert("Password Length Must be between 8 and 128 Characters")
+    };
+
+    // Alert for at least one option must be picked
+
+    if (!lowercase && !uppercase && !numbers && !symbols) {
+        alert("You must select at least one option for password characters.")
+    };
+
+    // call the password generator function with the length and passwordOptions as arguments
+
+    passwordEl.vaue = passGen(length, passwordOptions);
 })
 
-// Generator Functions for random characters
-// Lowercase, Uppercase, and Number gen uses unicode character charts.  
-let lowercaseGen = function () {
-    let letter = String.fromCharCode(Math.floor(Math.random()  * 26) + 97)
-    console.log(letter)
-}
 
-let uppercaseGen = function () {
-    let letter = String.fromCharCode(Math.floor(Math.random()  * 26) + 65)
-    console.log(letter)
-}
+passGen = function (length, passwordOptions) {
+    //Iniitalize final password as blank string
+    let finalPass = '';
 
-let numberGen = function () {
-    let num = String.fromCharCode(Math.floor(Math.random()  * 10) + 48)
-    console.log(num)
+    //Append random character from the passwordOptions
+    for (let i = 0; i<length; i++) {
+        finalPass += passwordOptions.charAt(Math.floor(Math.random() * passwordOptions.length))
+    };
+    return finalPass;
 }
+// Legacy code from atCharCode attempt. Saving it for later in case I wanted to use it again.
 
-let symbolGen = function () {
-    let symbolArr = [
-        '~',
-        '`',
-        '!',
-        '@',
-        '#',
-        '$',
-        '%',
-        '°',
-        '^',
-        '&',
-        '*',
-        '(',
-        ')',
-        '-',
-        '_',
-        '+',
-        '=',
-        '{',
-        '}',
-        '[',
-        ']',
-        '|',
-        '/',
-        ':',
-        ';',
-        '"',
-        '<',
-        '>',
-        ',',
-        '.',
-        '?',        
-    ]
-    let symbol = symbolArr[Math.floor(Math.random()  * symbolArr.length)]
-    console.log(symbol)
-}
+
+// // Generator Functions for random characters
+// // Lowercase, Uppercase, and Number gen uses unicode character charts.  
+// let lowercaseGen = function () {
+//     let letter = String.fromCharCode(Math.floor(Math.random()  * 26) + 97)
+//     console.log(letter)
+// }
+
+// let uppercaseGen = function () {
+//     let letter = String.fromCharCode(Math.floor(Math.random()  * 26) + 65)
+//     console.log(letter)
+// }
+
+// let numberGen = function () {
+//     let num = String.fromCharCode(Math.floor(Math.random()  * 10) + 48)
+//     console.log(num)
+// }
+
+// let symbolGen = function () {
+//     let symbolArr = [
+//         '~',
+//         '`',
+//         '!',
+//         '@',
+//         '#',
+//         '$',
+//         '%',
+//         '°',
+//         '^',
+//         '&',
+//         '*',
+//         '(',
+//         ')',
+//         '-',
+//         '_',
+//         '+',
+//         '=',
+//         '{',
+//         '}',
+//         '[',
+//         ']',
+//         '|',
+//         '/',
+//         ':',
+//         ';',
+//         '"',
+//         '<',
+//         '>',
+//         ',',
+//         '.',
+//         '?',        
+//     ]
+//     let symbol = symbolArr[Math.floor(Math.random()  * symbolArr.length)]
+//     console.log(symbol)
+// }
 
