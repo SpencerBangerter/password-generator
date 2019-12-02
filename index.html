@@ -19,26 +19,31 @@
     ></script>
   </head>
   <body>
-    <div class="container border border-primary rounded mx-auto">
+    <div class="container rounded mx-auto">
       <nav class="navbar">
         <h2 class="navbar-text">Password Generator</h2>
         <h2 class="navbar-text">By Spencer Bangerter</h2>
       </nav>      
       <div class="linebreak"></div>
-      <div class="p-4">
-        <textarea
-          class=""
+      <!-- password display row -->
+      <div class="row p-4">
+        <textarea class="mx-auto"
           readonly
           id="password"
           placeholder="Your Secure Password"
           aria-label="Generated Password"
         ></textarea>
-        <button id="clipboard" onclick="copyToClip()">
-          <p class="fas fa-clipboard fa-3x"></p>
-          <!-- <i class="fas fa-clipboard"> Copy To Clipboard</i> -->
-
-        </button>
       </div>
+      <!-- button row -->
+      <div class="row mb-3"> 
+        <div class="mx-auto align-middle" >
+          <button class='btn-lg align-middle' id="generate">Generate Password</button>
+          <button class="align-middle" id="clipboard" onclick="copyToClip()">
+            <p class="fas fa-clipboard fa-3x"></p>
+          </button>
+        </div>
+      </div>
+
 
       <!-- Password Selectors -->
       <div class="passwordLength">
@@ -62,9 +67,6 @@
       <div class="checkboxes">
         <input type="checkbox" id="symbolsCheck" checked />
         <label>Include Symbols</label>
-      </div>
-      <div>
-        <button id="generate">Generate Password</button>
       </div>
     </div>
 
