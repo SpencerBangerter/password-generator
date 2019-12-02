@@ -50,15 +50,17 @@ generateEl.addEventListener("click", function () {
     // circumvents ability to manually enter numbers over the min/max
     if (length < 8 || length > 128 || !length) {
         alert("Password Length Must be between 8 and 128 Characters")
-    };
+        return
+    }; 
 
     // Alert for at least one option must be picked
     if (!lowercase && !uppercase && !numbers && !symbols) {
         alert("You must select at least one option for password characters.")
+        return
     };
 
     // call the password generator function with the length and passwordOptions as arguments
-    passwordEl.value = passGen(length, passwordOptions);
+        passwordEl.value = passGen(length, passwordOptions);
 })
 
 
