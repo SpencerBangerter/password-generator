@@ -24,10 +24,10 @@ Password minimums are:
 
 I used helpful guidance from the following people and places directly.
 
-https://getbootstrap.com/
-https://www.w3schools.com/
-https://github.com/jbejar
-https://github.com/Modern-Viking 
-https://github.com/MR-TYLER31
-https://github.com/jrheap
-https://github.com/Nidant
+- https://getbootstrap.com/
+- https://www.w3schools.com/
+- https://github.com/jbejar
+- https://github.com/Modern-Viking 
+- https://github.com/MR-TYLER31
+- https://github.com/jrheap
+- https://github.com/Nidant
