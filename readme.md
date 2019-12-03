@@ -8,7 +8,7 @@ Password minimums are:
 - At least one character set must be selected
 
 ### link to the deployed application
-- https://spencerbangerter.github.io/portfolio-bootstrap/
+- https://spencerbangerter.github.io/password-generator/
 
 ## Contents and Instructions
 
